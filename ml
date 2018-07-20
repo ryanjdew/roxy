@@ -99,11 +99,11 @@ then
     printf "\nCreating new Application: ${app_name}...\n"
     if [ -e $app_name ]
     then
-      git clone git://github.com/${FORK}/roxy.git -b ${BRANCH} ${app_name}.tmp_1 || exit 1
+      git clone https://github.com/${FORK}/roxy.git -b ${BRANCH} ${app_name}.tmp_1 || exit 1
       mv ${app_name}.tmp_1/* ${app_name}/ || exit 1
       rm -rf ${app_name}.tmp_1 || exit 1
     else
-      git clone git://github.com/${FORK}/roxy.git -b ${BRANCH} ${app_name} || exit 1
+      git clone https://github.com/${FORK}/roxy.git -b ${BRANCH} ${app_name} || exit 1
     fi
 
     pushd ${app_name} > /dev/null  || exit 1
